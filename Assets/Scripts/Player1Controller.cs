@@ -6,10 +6,12 @@ public class Player1Controller : MonoBehaviour {
 	Rigidbody2D rigi;
 	public float fuerza = 1;
 	public float fsalto = 400;
+	private GameControl gcs;
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> (); // Coger el Animator de el elemento que tenga el script
 		rigi = GetComponent<Rigidbody2D>();
+		gcs = GameObject.Find ("GameControl").GetComponent<GameControl> ();
 	}
 	
 	// Update is called once per frame
@@ -43,6 +45,12 @@ public class Player1Controller : MonoBehaviour {
 
 		if (Input.GetKeyUp (KeyCode.Space)) {
 			anim.SetBool ("jump", true);
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D col){
+		if (col.gameObject.tag == "muerte") {
+			gcs.respawn ();
 		}
 	}
 }
