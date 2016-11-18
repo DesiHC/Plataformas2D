@@ -7,8 +7,9 @@ public class GameControl : MonoBehaviour {
 	public GameObject player;
 	public bool esta_vivo = true;
 
-	void start(){
+	void Start(){
 		punto_inicio = player.transform.position;
+		Debug.Log ("X" + player.transform.position.x);
 	}
 
 	public void respawn(){
