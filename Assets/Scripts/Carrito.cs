@@ -23,7 +23,6 @@ public class Carrito : MonoBehaviour {
 		if (col.gameObject.tag == "Pared") {
 			jm.motorSpeed = jm.motorSpeed * -1f;
 			wj.motor = jm;
-
 		}
 	}
 
