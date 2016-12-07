@@ -23,7 +23,7 @@ public class Moneda : MonoBehaviour {
 	}
 	void OnCollisionEnter2D(Collision2D col){
 		if (col.gameObject.tag == "Player") {
-
+			
 			ctrl_moneda.suma_monedas (5);
 			Destroy (gameObject);
 			Random.Range (0.02f, 0.02F);
